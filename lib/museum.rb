@@ -30,4 +30,17 @@ class Museum
     @patrons << patron
   end
 
+  def patrons_by_exhibit_interest
+    exhibit_interest = Hash.new(0)
+    @exhibits.each do |exhibit|
+      @patrons.each do |patron|
+        if patron.interests == exhibit.name
+          exhibit_interest[exhibit] << patron
+        end
+      end
+    end
+    exhibit_interest
+  end
+
+
 end

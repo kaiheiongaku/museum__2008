@@ -1,4 +1,5 @@
 require './lib/exhibit'
+require './lib/patron'
 require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'

@@ -53,7 +53,7 @@ class MuseumTest < Minitest::Test
     assert_equal expected2, actual2
   end
 
-  def test_admit_patron
+  def test_admit
     dmns = Museum.new("Denver Museum of Nature and Science")
     gems_and_minerals = Exhibit.new({name: "Gems and Minerals", cost: 0})
     dead_sea_scrolls = Exhibit.new({name: "Dead Sea Scrolls", cost: 10})
@@ -77,7 +77,7 @@ class MuseumTest < Minitest::Test
     dmns.admit(patron_2)
     dmns.admit(patron_3)
 
-    assert_equal [patron_1, patron_2], dmns.patrons
+    assert_equal [patron_1, patron_2, patron_3], dmns.patrons
   end
 
 end
